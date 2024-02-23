@@ -1,10 +1,10 @@
 import 'dart:convert';
+
+import 'package:evaluacion_final/utils/api_endpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:practica_04/screens/home.dart';
-import 'package:practica_04/utils/api_endpoints.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterController extends GetxController {
   TextEditingController nameController = TextEditingController();
@@ -35,16 +35,15 @@ class RegisterController extends GetxController {
       print(body);
 
       http.Response response =
-      await http.post(url, body: jsonEncode(body), headers: headers);
+          await http.post(url, body: jsonEncode(body), headers: headers);
 
       if (response.statusCode == 201) {
         final json = jsonDecode(response.body);
 
-
         if (json['code'] == 201) {
-         // var token = json['data']['Token'];
-         // print(token);
-         // final SharedPreferences? prefs = await _prefs;
+          // var token = json['data']['Token'];
+          // print(token);
+          // final SharedPreferences? prefs = await _prefs;
           // await prefs?.setString('token', token);
           nameController.clear();
           emailController.clear();

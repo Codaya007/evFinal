@@ -1,7 +1,7 @@
-import 'package:practica_04/controllers/login_controller.dart';
-import 'package:practica_04/controllers/register_controller.dart';
-import 'package:practica_04/screens/widgets/inputs_fields.dart';
-import 'package:practica_04/screens/widgets/submit_button.dart';
+import 'package:evaluacion_final/controllers/login_controller.dart';
+import 'package:evaluacion_final/controllers/register_controller.dart';
+import 'package:evaluacion_final/widgets/inputs_fields.dart';
+import 'package:evaluacion_final/widgets/submit_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,8 +11,7 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  RegisterController registerationController =
-  Get.put(RegisterController());
+  RegisterController registerationController = Get.put(RegisterController());
   LoginController loginController = Get.put(LoginController());
 
   var isLogin = false.obs;
@@ -24,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
           padding: EdgeInsets.all(36),
           child: Center(
             child: Obx(
-                  () => Column(
+              () => Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -47,14 +46,16 @@ class _AuthScreenState extends State<AuthScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         MaterialButton(
-                          color: !isLogin.value ?  Colors.pinkAccent : Colors.white,
+                          color:
+                              !isLogin.value ? Colors.pinkAccent : Colors.white,
                           onPressed: () {
                             isLogin.value = false;
                           },
                           child: Text('Registrarse'),
                         ),
                         MaterialButton(
-                          color: isLogin.value ?  Colors.pinkAccent : Colors.white,
+                          color:
+                              isLogin.value ? Colors.pinkAccent : Colors.white,
                           onPressed: () {
                             isLogin.value = true;
                           },
@@ -81,23 +82,27 @@ class _AuthScreenState extends State<AuthScreen> {
         SizedBox(
           height: 20,
         ),
-        InputTextFieldWidget(registerationController.lastnameController, 'Apellidos'),
+        InputTextFieldWidget(
+            registerationController.lastnameController, 'Apellidos'),
         SizedBox(
           height: 20,
         ),
-        InputTextFieldWidget(registerationController.addressController, 'Dirección'),
+        InputTextFieldWidget(
+            registerationController.addressController, 'Dirección'),
         SizedBox(
           height: 20,
         ),
-        InputTextFieldWidget(registerationController.phoneNumberController, 'Teléfono'),
+        InputTextFieldWidget(
+            registerationController.phoneNumberController, 'Teléfono'),
         SizedBox(
           height: 20,
         ),
-        InputTextFieldWidget(registerationController.birthdayController, 'Fecha de nacimiento'),
+        InputTextFieldWidget(
+            registerationController.birthdayController, 'Fecha de nacimiento'),
         SizedBox(
           height: 20,
-        ),        InputTextFieldWidget(
-            registerationController.emailController, 'Email'),
+        ),
+        InputTextFieldWidget(registerationController.emailController, 'Email'),
         SizedBox(
           height: 20,
         ),
