@@ -1,10 +1,10 @@
 import 'dart:convert';
 
+import 'package:evaluacion_final/screens/comment_locations.dart';
+import 'package:evaluacion_final/utils/api_endpoints.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:practica_04/screens/home.dart';
-import 'package:practica_04/utils/api_endpoints.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController {
@@ -36,7 +36,7 @@ class LoginController extends GetxController {
 
           emailController.clear();
           passwordController.clear();
-          Get.off(const HomeScreen());
+          Get.off(const CommentLocationsView());
         } else {
           throw jsonDecode(response.body)['msg'];
         }
